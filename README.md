@@ -1,7 +1,18 @@
 # AI-Powered PDF Question Answering (RAG Pipeline)
 
-A general-purpose, AI-powered Retrieval-Augmented Generation (RAG) pipeline for asking questions about documents (any PDF).
-Built with Mistral-7B-Instruct (LLM), BGE Large (v1.5) embeddings, LangChain, and ChromaDB — fully Colab-friendly.
+A general-purpose Retrieval-Augmented Generation (RAG) pipeline that lets you ask natural-language questions about any PDF document.
+
+Built with:
+
+Mistral-7B-Instruct (LLM)
+
+BAAI/bge-large-en-v1.5 (Embeddings)
+
+LangChain + ChromaDB (Vector Search)
+
+Gradio (Interactive UI)
+
+Designed to run seamlessly on Google Colab 🚀.
 
 ## ⚠️ Disclaimer
 
@@ -9,55 +20,53 @@ Add your Hugging Face API key first in Colab Secrets or as an environment variab
 
 This notebook is for educational/demo purposes only.
 
-AI-generated answers may not be fully accurate — always verify with official documents.
+Answers are AI-generated — always verify with official documents.
 
-Do not upload sensitive or confidential PDFs.
+❌ Do not upload confidential or sensitive PDFs.
 
 ## ✨ Features
 
-📂 Upload any PDF at runtime using Colab file picker.
+📂 Upload any PDF at runtime via Colab file picker.
 
-✂️ Split documents into smaller chunks for better embeddings.
+✂️ Automatic text chunking for efficient embeddings.
 
-🔍 Generate BAAI/bge-large-en-v1.5 embeddings and store them in a Chroma vector store.
+🔍 Semantic search powered by BGE embeddings.
 
-🤖 Use Mistral-7B-Instruct (via Hugging Face Inference API) for LLM-powered Q&A.
+🤖 LLM Q&A with Mistral-7B-Instruct (via Hugging Face Inference API).
 
-⚡ Perform semantic search to retrieve relevant chunks.
+📑 Answers include source references for transparency.
 
-🖥️ Ask questions via an interactive Gradio web interface.
+🖥️ Interactive Gradio web app for easy question-asking.
 
-📑 Returns answers with source references.
-
-## 🚀 How to Use (Colab)
+## 🚀 How to Use (Google Colab)
 
 Open the notebook in Google Colab.
 
 Add your Hugging Face API key in Colab Secrets:
 
-Go to Tools → Settings → Secrets
+Go to Tools → Settings → Secrets.
 
 Add key: HF_API_KEY
 
-Value: <Your Hugging Face API key>
+Value: <your Hugging Face API key>
 
-Upload your PDF when prompted by the file picker.
+Upload your PDF when prompted.
 
-Run the notebook cells step by step:
+Run cells step by step:
 
-Connect to Hugging Face API
+✅ Connect to Hugging Face API
 
-Load PDF
+📑 Load PDF
 
-Split text into chunks
+✂️ Split text into chunks
 
-Create embeddings & vector store
+🧩 Create embeddings & vector store
 
-Build the RAG QA chain
+🔗 Build the RAG QA chain
 
-Launch the Gradio interface
+🎛️ Launch the Gradio interface
 
-Ask questions about your uploaded PDF using the interface 🎉
+Ask questions about your document 🎉
 
 ## 💡 Example Questions
 
@@ -67,13 +76,15 @@ How do I request vacation time?
 
 What benefits are available to employees?
 
+Summarize the main points of section 3.
+
 ## 📝 Notes
 
-Works for any text-based PDF, not tied to a specific file.
+Works for any text-based PDF (not images).
 
-Scanned PDFs (images) are not supported without OCR.
+For scanned PDFs, you’ll need OCR (e.g., Tesseract + PyMuPDF).
 
-The pipeline can be adapted for finance, legal, technical manuals, academic papers, etc.
+Can be easily adapted for finance, legal, technical manuals, research papers, and more.
 
 ## 📦 Dependencies
 
@@ -85,6 +96,6 @@ The pipeline can be adapted for finance, legal, technical manuals, academic pape
 
 `gradio`
 
-`sentence-transformers`
+sentence-transformers
 
-`pypdf or pymupdf (for PDF parsing)`
+pypdf or pymupdf (for PDF parsing)
